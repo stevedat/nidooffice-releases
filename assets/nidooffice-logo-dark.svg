@@ -1,0 +1,18 @@
+<svg width="1091" height="240" viewBox="0 0 1091 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_nidooffice)">
+  <rect width="240" height="240" rx="54" fill="white"/>
+  <!-- Back Document Sheet Outline -->
+  <rect x="78" y="38" width="110" height="136" rx="16" fill="white" stroke="black" stroke-width="8" stroke-opacity="0.45"/>
+  <!-- Foreground Document Sheet with Folded Corner -->
+  <path d="M46 66C46 56.0589 54.0589 48 64 48H134L168 82V180C168 189.941 159.941 198 150 198H64C54.0589 198 46 189.941 46 180V66Z" fill="black"/>
+  <path d="M134 48L168 82H144C138.477 82 134 77.5228 134 72V48Z" fill="white" fill-opacity="0.22"/>
+  <!-- Nido "N" Monogram Cutout -->
+  <path d="M72 166V90H89L125 138V90H142V166H125L89 118V166H72Z" fill="white"/>
+</g>
+<text x="308" y="176" fill="white" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Inter, sans-serif" font-size="148" font-weight="700" letter-spacing="-3">NidoOffice</text>
+<defs>
+<clipPath id="clip0_nidooffice">
+<rect width="240" height="240" fill="black"/>
+</clipPath>
+</defs>
+</svg>

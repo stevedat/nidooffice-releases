@@ -1,0 +1,70 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-base" x1="96" y1="64" x2="928" y2="960" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B1324"/>
+      <stop offset="52%" stop-color="#09101D"/>
+      <stop offset="100%" stop-color="#050911"/>
+    </linearGradient>
+    <radialGradient id="bg-glow-emerald" cx="0.78" cy="0.22" r="0.65">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#0EA5E9" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rim-grad" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.42"/>
+      <stop offset="50%" stop-color="#10B981" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="back-sheet" x1="340" y1="168" x2="808" y2="740" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.88"/>
+    </linearGradient>
+    <linearGradient id="nido-brand" x1="196" y1="224" x2="724" y2="836" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="48%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="front-sheet" x1="208" y1="224" x2="708" y2="836" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="fold-grad" x1="564" y1="224" x2="708" y2="368" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <filter id="card-shadow" x="140" y="176" width="640" height="730" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#020617" flood-opacity="0.58"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Squircle Base -->
+  <rect width="1024" height="1024" rx="228" fill="url(#bg-base)"/>
+  <rect width="1024" height="1024" rx="228" fill="url(#bg-glow-emerald)"/>
+  <rect x="24" y="24" width="976" height="976" rx="206" stroke="url(#rim-grad)" stroke-width="6"/>
+
+  <!-- Back Document Sheet + 4 Suite Color Tabs (Docs, Sheets, Slides, PDF) -->
+  <g>
+    <rect x="336" y="172" width="464" height="576" rx="64" fill="url(#back-sheet)" stroke="#334155" stroke-width="5"/>
+    <!-- Suite Color Pills on Right Edge -->
+    <rect x="772" y="252" width="48" height="68" rx="16" fill="#3B82F6"/>
+    <rect x="772" y="340" width="48" height="68" rx="16" fill="#10B981"/>
+    <rect x="772" y="428" width="48" height="68" rx="16" fill="#F59E0B"/>
+    <rect x="772" y="516" width="48" height="68" rx="16" fill="#EF4444"/>
+    <!-- Subtle ruling lines on back sheet -->
+    <rect x="404" y="256" width="220" height="18" rx="9" fill="#38BDF8" fill-opacity="0.28"/>
+    <rect x="404" y="296" width="300" height="14" rx="7" fill="#94A3B8" fill-opacity="0.18"/>
+    <rect x="404" y="328" width="260" height="14" rx="7" fill="#94A3B8" fill-opacity="0.14"/>
+  </g>
+
+  <!-- Foreground Document Sheet with Folded Top-Right Corner -->
+  <g filter="url(#card-shadow)">
+    <path d="M204 292C204 254.445 234.445 224 272 224H564L708 368V764C708 801.555 677.555 832 640 832H272C234.445 832 204 801.555 204 764V292Z" fill="url(#front-sheet)"/>
+    <path d="M564 224L708 368H612C585.49 368 564 346.51 564 320V224Z" fill="url(#fold-grad)"/>
+  </g>
+
+  <!-- Nido Brand Monogram "N" inside Foreground Document -->
+  <path d="M312 696V384H378L530 584V384H596V696H530L378 496V696H312Z" fill="url(#nido-brand)"/>
+
+  <!-- Top-Left Emerald Accent Bar inside Document -->
+  <rect x="312" y="308" width="144" height="22" rx="11" fill="#10B981"/>
+</svg>
