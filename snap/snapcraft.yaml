@@ -1,0 +1,142 @@
+name: nidooffice
+base: core22
+version: '0.12.6'
+summary: Local-first AI Office Suite for Word, Excel, PowerPoint, PDF & Markdown
+description: |
+  NidoOffice is a unified, local-first AI office suite built on Apache-2.0
+  open-source foundations (including GenOffice). One desktop application hosts
+  Word (.docx), Excel (.xlsx), PowerPoint (.pptx), PDF, Markdown, and HTML
+  editors behind a single workspace with an integrated AI copilot.
+
+  Key capabilities:
+  - Docs: Full-fidelity Word (.docx) editing with tracked changes, comments, and export.
+  - Sheets: Excel (.xlsx) workbooks with formulas, charts, and a native Rust calculation sidecar.
+  - Slides: PowerPoint (.pptx) presentations with speaker notes and presenter tools.
+  - PDF & Markdown: Native PDF viewing/markup, PDF-to-Office conversion, and live Markdown/HTML editing.
+  - AI Copilot & Local CLI Agent Bridge: Works with local files offline or connects to your own AI API keys and local coding agents (Claude, Gemini, Codex, OpenCode) via MCP.
+  - Privacy-first & Local-first: Documents remain on your local disk; no account is required to edit documents.
+
+grade: stable
+confinement: strict
+license: Apache-2.0
+compression: xz
+icon: snap/gui/icon.png
+
+architectures:
+  - build-on: [amd64]
+    build-for: [amd64]
+  - build-on: [arm64]
+    build-for: [arm64]
+
+apps:
+  nidooffice:
+    command: bin/nidooffice-launch
+    desktop: usr/share/applications/nidooffice.desktop
+    common-id: com.nidooffice.app
+    plugs:
+      - desktop
+      - desktop-legacy
+      - wayland
+      - x11
+      - opengl
+      - home
+      - removable-media
+      - network
+      - network-bind
+      - audio-playback
+      - audio-record
+      - browser-support
+  cli:
+    command: opt/NidoOffice/resources/cli/genoffice
+    plugs:
+      - home
+      - removable-media
+      - network
+      - network-bind
+
+plugs:
+  browser-support:
+    allow-sandbox: false
+
+parts:
+  nidooffice:
+    plugin: nil
+    source: .
+    build-packages:
+      - curl
+      - ca-certificates
+      - squashfs-tools
+      - binutils
+      - xz-utils
+    stage-packages:
+      - libasound2
+      - libatk-bridge2.0-0
+      - libatk1.0-0
+      - libatspi2.0-0
+      - libcairo2
+      - libcups2
+      - libdbus-1-3
+      - libdrm2
+      - libgbm1
+      - libglib2.0-0
+      - libgtk-3-0
+      - libnotify4
+      - libnspr4
+      - libnss3
+      - libpango-1.0-0
+      - libsecret-1-0
+      - libx11-6
+      - libxcb1
+      - libxcomposite1
+      - libxdamage1
+      - libxext6
+      - libxfixes3
+      - libxkbcommon0
+      - libxrandr2
+      - libxss1
+      - libxtst6
+    override-pull: |
+      craftctl default
+      ARCH="${CRAFT_ARCH_BUILD_FOR:-$(dpkg --print-architecture)}"
+      REPO="stevedat/nidooffice-releases"
+      VER="0.12.6"
+      if [ "$ARCH" = "arm64" ]; then
+        ASSET_URL="https://github.com/${REPO}/releases/download/v${VER}/NidoOffice-${VER}-arm64.AppImage"
+        FALLBACK_URL="https://github.com/${REPO}/releases/latest/download/NidoOffice-linux-arm64.AppImage"
+        FALLBACK_V2="https://github.com/${REPO}/releases/download/v0.12.5/NidoOffice-0.12.5-arm64.AppImage"
+      else
+        ASSET_URL="https://github.com/${REPO}/releases/download/v${VER}/NidoOffice-${VER}.AppImage"
+        FALLBACK_URL="https://github.com/${REPO}/releases/latest/download/NidoOffice-linux-x64.AppImage"
+        FALLBACK_V2="https://github.com/${REPO}/releases/download/v0.12.5/NidoOffice-0.12.5.AppImage"
+      fi
+      curl -fL --retry 3 -o nidooffice.AppImage "$ASSET_URL" \
+        || curl -fL --retry 3 -o nidooffice.AppImage "$FALLBACK_URL" \
+        || curl -fL --retry 3 -o nidooffice.AppImage "$FALLBACK_V2"
+      chmod +x nidooffice.AppImage
+    override-build: |
+      mkdir -p "$CRAFT_PART_INSTALL/opt/NidoOffice"
+      mkdir -p "$CRAFT_PART_INSTALL/bin"
+      mkdir -p "$CRAFT_PART_INSTALL/usr/share/applications"
+      ./nidooffice.AppImage --appimage-extract
+      cp -a squashfs-root/. "$CRAFT_PART_INSTALL/opt/NidoOffice/"
+      rm -f "$CRAFT_PART_INSTALL/opt/NidoOffice/resources/ime/"*.deb || true
+      cat > "$CRAFT_PART_INSTALL/bin/nidooffice-launch" <<'EOF'
+      #!/bin/sh
+      export ELECTRON_DISABLE_SANDBOX=1
+      export TMPDIR="${XDG_RUNTIME_DIR:-/tmp}"
+      exec "$SNAP/opt/NidoOffice/genoffice" --no-sandbox "$@"
+      EOF
+      chmod 0755 "$CRAFT_PART_INSTALL/bin/nidooffice-launch"
+      cat > "$CRAFT_PART_INSTALL/usr/share/applications/nidooffice.desktop" <<'EOF'
+      [Desktop Entry]
+      Name=NidoOffice
+      GenericName=AI Office Suite
+      Comment=Local-first AI Office Suite for Word, Excel, PowerPoint, PDF & Markdown
+      Exec=nidooffice %U
+      Icon=${SNAP}/meta/gui/icon.png
+      Terminal=false
+      Type=Application
+      Categories=Office;WordProcessor;Spreadsheet;Presentation;Viewer;
+      MimeType=application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-excel.sheet.macroEnabled.12;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-excel;text/csv;text/tab-separated-values;application/pdf;text/markdown;text/html;
+      StartupWMClass=genoffice
+      EOF
