@@ -29,7 +29,8 @@ All links below automatically point to the latest official release (`Latest Rele
 | :--- | :--- | :--- | :--- |
 | **macOS (Apple Silicon)** | `arm64` (M1 / M2 / M3 / M4) | [**NidoOffice-mac-arm64.dmg**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-mac-arm64.dmg) | Code-Signed & Apple Notarized (`.dmg`) |
 | **macOS (Intel)** | `x64` | [**NidoOffice-mac-x64.dmg**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-mac-x64.dmg) | Code-Signed & Apple Notarized (`.dmg`) |
-| **Windows 10 / 11** | `x64` (64-bit) | [**NidoOffice-win-x64.exe**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-x64.exe) | Standard NSIS Installer (`.exe`) |
+| **Windows 10 / 11 (Recommended)** | `x64` & `arm64` | [**NidoOffice-Store-Setup.exe**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-Store-Setup.exe) | Signed by Microsoft Corporation — 0 SmartScreen (`.exe`) |
+| **Windows 10 / 11 (Offline)** | `x64` (64-bit) | [**NidoOffice-win-x64.exe**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-x64.exe) | Standard Offline NSIS Installer (`.exe`) |
 | **Windows 10 / 11 (Portable)** | `x64` (No Admin Required) | [**NidoOffice-win-x64-portable.zip**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-x64-portable.zip) | Extract & run immediately (`.zip`) |
 | **Windows 11 on ARM** | `arm64` (Snapdragon / Surface) | [**NidoOffice-win-arm64.exe**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-arm64.exe) | Native ARM64 Installer (`.exe`) |
 | **Microsoft Store (MSIX)** | `x64` & `arm64` | [**Microsoft Store — NidoOffice**](https://apps.microsoft.com/detail/9PDPX3W5J6D3) | Auto-updates via Microsoft Store |
