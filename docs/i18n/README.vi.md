@@ -29,7 +29,8 @@ Các liên kết dưới đây luôn tự động trỏ tới phiên bản chín
 | :--- | :--- | :--- | :--- |
 | **macOS (Apple Silicon)** | `arm64` (M1 / M2 / M3 / M4) | [**NidoOffice-mac-arm64.dmg**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-mac-arm64.dmg) | Đã ký số & Apple Notarized (`.dmg`) |
 | **macOS (Intel)** | `x64` | [**NidoOffice-mac-x64.dmg**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-mac-x64.dmg) | Đã ký số & Apple Notarized (`.dmg`) |
-| **Windows 10 / 11** | `x64` (64-bit) | [**NidoOffice-win-x64.exe**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-x64.exe) | Bộ cài chuẩn NSIS (`.exe`) |
+| **Windows 10 / 11 (Khuyên dùng)** | `x64` & `arm64` | [**NidoOffice-Store-Setup.exe**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-Store-Setup.exe) | Ký số bởi Microsoft Corporation — 0 cảnh báo SmartScreen (`.exe`) |
+| **Windows 10 / 11 (Offline)** | `x64` (64-bit) | [**NidoOffice-win-x64.exe**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-x64.exe) | Bộ cài chuẩn NSIS Offline (`.exe`) |
 | **Windows 10 / 11 (Portable)** | `x64` (Không cần quyền Admin) | [**NidoOffice-win-x64-portable.zip**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-x64-portable.zip) | Giải nén chạy ngay (`.zip`) |
 | **Windows 11 on ARM** | `arm64` (Snapdragon / Surface) | [**NidoOffice-win-arm64.exe**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-arm64.exe) | Bộ cài gốc ARM64 (`.exe`) |
 | **Windows Store (MSIX)** | `x64` & `arm64` | [**Microsoft Store — NidoOffice**](https://apps.microsoft.com/detail/9PDPX3W5J6D3) | Tự động cập nhật qua Microsoft Store |
