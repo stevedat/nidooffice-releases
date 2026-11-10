@@ -1,4 +1,5 @@
 name: nidooffice
+title: NidoOffice
 base: core22
 version: '0.12.6'
 summary: Local-first AI Office Suite for Word, Excel, PowerPoint, PDF & Markdown
@@ -21,6 +22,10 @@ confinement: strict
 license: Apache-2.0
 compression: xz
 icon: snap/gui/icon.png
+website: https://nidooffice.app
+contact: mailto:support@nidooffice.app
+issues: https://github.com/stevedat/nidooffice-releases/issues
+source-code: https://github.com/stevedat/nidooffice-releases
 
 architectures:
   - build-on: [amd64]
@@ -68,6 +73,9 @@ parts:
       - squashfs-tools
       - binutils
       - xz-utils
+      - zlib1g-dev
+      - libfuse2
+      - python3
     stage-packages:
       - libasound2
       - libatk-bridge2.0-0
@@ -100,6 +108,11 @@ parts:
       ARCH="${CRAFT_ARCH_BUILD_FOR:-$(dpkg --print-architecture)}"
       REPO="stevedat/nidooffice-releases"
       VER="0.12.6"
+      if [ "$ARCH" = "arm64" ] && [ -d "apps/shell/release/linux-arm64-unpacked" ]; then
+        exit 0
+      elif [ "$ARCH" != "arm64" ] && [ -d "apps/shell/release/linux-unpacked" ]; then
+        exit 0
+      fi
       if [ "$ARCH" = "arm64" ]; then
         ASSET_URL="https://github.com/${REPO}/releases/download/v${VER}/NidoOffice-${VER}-arm64.AppImage"
         FALLBACK_URL="https://github.com/${REPO}/releases/latest/download/NidoOffice-linux-arm64.AppImage"
@@ -114,11 +127,22 @@ parts:
         || curl -fL --retry 3 -o nidooffice.AppImage "$FALLBACK_V2"
       chmod +x nidooffice.AppImage
     override-build: |
+      ARCH="${CRAFT_ARCH_BUILD_FOR:-$(dpkg --print-architecture)}"
       mkdir -p "$CRAFT_PART_INSTALL/opt/NidoOffice"
       mkdir -p "$CRAFT_PART_INSTALL/bin"
       mkdir -p "$CRAFT_PART_INSTALL/usr/share/applications"
-      ./nidooffice.AppImage --appimage-extract
-      cp -a squashfs-root/. "$CRAFT_PART_INSTALL/opt/NidoOffice/"
+      if [ "$ARCH" = "arm64" ] && [ -d "apps/shell/release/linux-arm64-unpacked" ]; then
+        cp -a apps/shell/release/linux-arm64-unpacked/. "$CRAFT_PART_INSTALL/opt/NidoOffice/"
+      elif [ "$ARCH" != "arm64" ] && [ -d "apps/shell/release/linux-unpacked" ]; then
+        cp -a apps/shell/release/linux-unpacked/. "$CRAFT_PART_INSTALL/opt/NidoOffice/"
+      else
+        rm -rf squashfs-root
+        if ! ./nidooffice.AppImage --appimage-extract; then
+          OFFSET=$(python3 -c 'data=open("nidooffice.AppImage","rb").read(); print(data.rfind(b"hsqs"))')
+          unsquashfs -o "$OFFSET" -d squashfs-root nidooffice.AppImage
+        fi
+        cp -a squashfs-root/. "$CRAFT_PART_INSTALL/opt/NidoOffice/"
+      fi
       rm -f "$CRAFT_PART_INSTALL/opt/NidoOffice/resources/ime/"*.deb || true
       cat > "$CRAFT_PART_INSTALL/bin/nidooffice-launch" <<'EOF'
       #!/bin/sh
@@ -126,7 +150,6 @@ parts:
       export TMPDIR="${XDG_RUNTIME_DIR:-/tmp}"
       exec "$SNAP/opt/NidoOffice/genoffice" --no-sandbox "$@"
       EOF
-      chmod 0755 "$CRAFT_PART_INSTALL/bin/nidooffice-launch"
       cat > "$CRAFT_PART_INSTALL/usr/share/applications/nidooffice.desktop" <<'EOF'
       [Desktop Entry]
       Name=NidoOffice
@@ -140,3 +163,8 @@ parts:
       MimeType=application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-excel.sheet.macroEnabled.12;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-excel;text/csv;text/tab-separated-values;application/pdf;text/markdown;text/html;
       StartupWMClass=genoffice
       EOF
+      chmod -R a+rX "$CRAFT_PART_INSTALL"
+      chmod 0755 "$CRAFT_PART_INSTALL/bin/nidooffice-launch"
+      chmod 0755 "$CRAFT_PART_INSTALL/opt/NidoOffice/genoffice" || true
+      chmod 0755 "$CRAFT_PART_INSTALL/opt/NidoOffice/resources/cli/genoffice" || true
+      chmod 0755 "$CRAFT_PART_INSTALL/opt/NidoOffice/resources/native/xlsx-sidecar" || true
