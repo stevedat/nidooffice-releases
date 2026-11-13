@@ -22,8 +22,8 @@ confinement: strict
 license: Apache-2.0
 compression: xz
 icon: snap/gui/icon.png
-website: https://nidooffice.app
-contact: mailto:support@nidooffice.app
+website: https://office.nido-holdings.com
+contact: https://github.com/stevedat/nidooffice-releases/issues
 issues: https://github.com/stevedat/nidooffice-releases/issues
 source-code: https://github.com/stevedat/nidooffice-releases
 

@@ -31,6 +31,7 @@
 | **Windows 10 / 11 (Portable)** | `x64` | [**NidoOffice-win-x64-portable.zip**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-x64-portable.zip) | Sans installation (`.zip`) |
 | **Windows 11 on ARM** | `arm64` | [**NidoOffice-win-arm64.exe**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-arm64.exe) | Installateur ARM64 natif (`.exe`) |
 | **Microsoft Store** | `x64` & `arm64` | [**Microsoft Store — NidoOffice**](https://apps.microsoft.com/detail/9PDPX3W5J6D3) | Mise à jour automatique |
+| **Linux** | `x86_64` | [**NidoOffice-linux-x64.AppImage**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-linux-x64.AppImage) | Paquet `AppImage` |
 | **Linux** | `arm64` | [**NidoOffice-linux-arm64.AppImage**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-linux-arm64.AppImage) | Paquet `AppImage` |
 
 ---

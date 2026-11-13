@@ -34,6 +34,7 @@ All links below automatically point to the latest official release (`Latest Rele
 | **Windows 10 / 11 (Portable)** | `x64` (No Admin Required) | [**NidoOffice-win-x64-portable.zip**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-x64-portable.zip) | Extract & run immediately (`.zip`) |
 | **Windows 11 on ARM** | `arm64` (Snapdragon / Surface) | [**NidoOffice-win-arm64.exe**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-arm64.exe) | Native ARM64 Installer (`.exe`) |
 | **Microsoft Store (MSIX)** | `x64` & `arm64` | [**Microsoft Store — NidoOffice**](https://apps.microsoft.com/detail/9PDPX3W5J6D3) | Auto-updates via Microsoft Store |
+| **Linux** | `x86_64` | [**NidoOffice-linux-x64.AppImage**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-linux-x64.AppImage) | Self-contained `AppImage` |
 | **Linux** | `arm64` | [**NidoOffice-linux-arm64.AppImage**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-linux-arm64.AppImage) | Self-contained `AppImage` |
 
 ---
@@ -68,7 +69,7 @@ NidoOffice supports **22 interface languages** out of the box:
 - **Word Processor (`.docx` / `.odt`):** Byte-preserving OOXML engine, **Tracked AI Diffs** with one-click accept/reject per paragraph, right-click **`AI Quick Actions ▸`** context menu, and **6 Offline Starter Templates** for business, administration, and education.
 - **High-Speed Spreadsheets (`.xlsx`):** Powered by a native **Rust (`xlsx-sidecar`)** calculation engine supporting 400+ Excel formulas, Pivot Tables, charts, conditional formatting, and hundreds of thousands of rows on both `x64` and `arm64`.
 - **Presentations (`.pptx` / `.odp`):** Slide Master editor, vector shapes, speaker notes, presenter view, and clickable `[Slide N]` AI citations.
-- **PDF Studio, On-Device OCR & XML eTax Reader:** Edit PDF text directly in place via PDFium, convert scanned PDFs to Word/Excel/PowerPoint with on-device OCR, and inspect electronic tax/invoice `.xml` files.
+- **PDF Studio, Offline Digital Signatures (PKCS#11 USB Token), OCR & XML eTax Reader:** Sign PDFs offline with hardware USB Tokens (PKCS#11), macOS Keychain, Windows Certificate Store, or `.p12`/`.pfx` certificates; edit PDF text in place via PDFium, verify scanned OCR text, and inspect electronic tax/invoice `.xml` files.
 - **`NidoDrop` Local Wi-Fi File Transfer (Auto-Stop TTL) & `VieLotusIM` Input Method:** Share files between PC and phone over local Wi-Fi QR code with automatic session shutoff (15m / 30m / 1h / 4h); built-in Vietnamese input method.
 - **29 MCP Server Tools & Multi-Provider AI:** Connect with Nido AI, local coding CLIs (Claude Code, Codex, Antigravity, Kiro), Local LLMs (Ollama, LM Studio, vLLM), or Bring Your Own Key (BYOK).
 

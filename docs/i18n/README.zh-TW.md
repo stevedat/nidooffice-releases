@@ -31,6 +31,7 @@
 | **Windows 10 / 11 (免安裝版)** | `x64` | [**NidoOffice-win-x64-portable.zip**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-x64-portable.zip) | 解壓縮即用 (`.zip`) |
 | **Windows 11 on ARM** | `arm64` | [**NidoOffice-win-arm64.exe**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-arm64.exe) | 原生 ARM64 安裝檔 (`.exe`) |
 | **Microsoft Store** | `x64` & `arm64` | [**Microsoft Store — NidoOffice**](https://apps.microsoft.com/detail/9PDPX3W5J6D3) | 透過 Microsoft Store 自動更新 |
+| **Linux** | `x86_64` | [**NidoOffice-linux-x64.AppImage**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-linux-x64.AppImage) | 獨立執行檔 `AppImage` |
 | **Linux** | `arm64` | [**NidoOffice-linux-arm64.AppImage**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-linux-arm64.AppImage) | 獨立執行檔 `AppImage` |
 
 ---

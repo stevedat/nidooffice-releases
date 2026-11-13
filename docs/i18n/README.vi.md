@@ -34,6 +34,7 @@ Các liên kết dưới đây luôn tự động trỏ tới phiên bản chín
 | **Windows 10 / 11 (Portable)** | `x64` (Không cần quyền Admin) | [**NidoOffice-win-x64-portable.zip**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-x64-portable.zip) | Giải nén chạy ngay (`.zip`) |
 | **Windows 11 on ARM** | `arm64` (Snapdragon / Surface) | [**NidoOffice-win-arm64.exe**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-win-arm64.exe) | Bộ cài gốc ARM64 (`.exe`) |
 | **Windows Store (MSIX)** | `x64` & `arm64` | [**Microsoft Store — NidoOffice**](https://apps.microsoft.com/detail/9PDPX3W5J6D3) | Tự động cập nhật qua Microsoft Store |
+| **Linux** | `x86_64` | [**NidoOffice-linux-x64.AppImage**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-linux-x64.AppImage) | Gói độc lập `AppImage` |
 | **Linux** | `arm64` | [**NidoOffice-linux-arm64.AppImage**](https://github.com/stevedat/nidooffice-releases/releases/latest/download/NidoOffice-linux-arm64.AppImage) | Gói độc lập `AppImage` |
 
 ---
@@ -68,7 +69,7 @@ NidoOffice tích hợp sẵn **22 ngôn ngữ giao diện**:
 - **Soạn thảo Văn bản (`.docx` / `.odt`):** Bảo toàn cấu trúc OOXML cấp độ byte, theo dõi thay đổi của AI (`Tracked AI Diffs`) cho phép chấp nhận hoặc hoàn tác từng đoạn bằng 1 cú nhấp, menu chuột phải **`Tác vụ nhanh AI ▸`** và kệ **6 mẫu tài liệu Offline (`Starter templates`)** chuẩn văn phòng & giáo dục Việt Nam.
 - **Bảng tính Tốc độ Cao (`.xlsx`):** Vận hành bởi nhân tính toán gốc viết bằng **Rust (`xlsx-sidecar`)**, hỗ trợ hơn 400 hàm Excel, Pivot Table, biểu đồ, định dạng có điều kiện và xử lý hàng trăm nghìn dòng mượt mà trên cả `x64` và `arm64`.
 - **Trình chiếu Chuyên nghiệp (`.pptx` / `.odp`):** Thiết kế Slide Master, hình khối vector, ghi chú diễn giả, chế độ thuyết trình và trích dẫn AI `[Slide N]` nhấp nhảy trang tức thì.
-- **PDF Studio, OCR Tiếng Việt & Trình đọc Thuế XML (`eTax`):** Chỉnh sửa văn bản PDF trực tiếp bằng nhân PDFium, nhận diện chữ OCR ngay trên thiết bị và đọc tờ khai/hóa đơn điện tử `.xml`.
+- **PDF Studio, Ký Số USB Token Ngoại Tuyến (`PKCS#11`), OCR Tiếng Việt & Thuế XML (`eTax`):** Ký số PDF ngoại tuyến bằng USB Token phần cứng (`PKCS#11`), macOS Keychain, Windows Certificate Store hoặc tệp `.p12`/`.pfx` chuẩn Nghị định 30/eIDAS; chỉnh sửa PDF trực tiếp, rà soát hậu kỳ OCR và đọc tờ khai/hóa đơn `.xml`.
 - **Truyền tệp Nội bộ `NidoDrop` (Auto-Stop TTL) & Bộ gõ `Sen Việt` (`VieLotusIM`):** Chia sẻ file giữa máy tính và điện thoại qua mã QR Wi-Fi nội bộ với cơ chế tự ngắt sau 15 phút / 30 phút / 1 giờ / 4 giờ; tích hợp sẵn bộ gõ tiếng Việt tốc độ cao.
 - **29 Công cụ MCP Server & Đa Nhà Cung Cấp AI:** Kết nối trực tiếp với Nido AI, các CLI cục bộ (Claude Code, Codex, Antigravity, Kiro), Local LLM (Ollama, LM Studio, vLLM) hoặc khóa API riêng (BYOK).
 
