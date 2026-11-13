@@ -1,7 +1,7 @@
 name: nidooffice
 title: NidoOffice
 base: core22
-version: '0.12.6'
+version: '0.12.7'
 summary: Local-first AI Office Suite for Word, Excel, PowerPoint, PDF & Markdown
 description: |
   NidoOffice is a unified, local-first AI office suite built on Apache-2.0
@@ -107,7 +107,7 @@ parts:
       craftctl default
       ARCH="${CRAFT_ARCH_BUILD_FOR:-$(dpkg --print-architecture)}"
       REPO="stevedat/nidooffice-releases"
-      VER="0.12.6"
+      VER="0.12.7"
       if [ "$ARCH" = "arm64" ] && [ -d "apps/shell/release/linux-arm64-unpacked" ]; then
         exit 0
       elif [ "$ARCH" != "arm64" ] && [ -d "apps/shell/release/linux-unpacked" ]; then
@@ -116,11 +116,11 @@ parts:
       if [ "$ARCH" = "arm64" ]; then
         ASSET_URL="https://github.com/${REPO}/releases/download/v${VER}/NidoOffice-${VER}-arm64.AppImage"
         FALLBACK_URL="https://github.com/${REPO}/releases/latest/download/NidoOffice-linux-arm64.AppImage"
-        FALLBACK_V2="https://github.com/${REPO}/releases/download/v0.12.5/NidoOffice-0.12.5-arm64.AppImage"
+        FALLBACK_V2="https://github.com/${REPO}/releases/download/v0.12.6/NidoOffice-0.12.6-arm64.AppImage"
       else
         ASSET_URL="https://github.com/${REPO}/releases/download/v${VER}/NidoOffice-${VER}.AppImage"
         FALLBACK_URL="https://github.com/${REPO}/releases/latest/download/NidoOffice-linux-x64.AppImage"
-        FALLBACK_V2="https://github.com/${REPO}/releases/download/v0.12.5/NidoOffice-0.12.5.AppImage"
+        FALLBACK_V2="https://github.com/${REPO}/releases/download/v0.12.6/NidoOffice-0.12.6.AppImage"
       fi
       curl -fL --retry 3 -o nidooffice.AppImage "$ASSET_URL" \
         || curl -fL --retry 3 -o nidooffice.AppImage "$FALLBACK_URL" \
