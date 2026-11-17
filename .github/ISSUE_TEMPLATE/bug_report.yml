@@ -1,0 +1,42 @@
+name: Bug Report
+description: Report a bug or unexpected behavior in NidoOffice
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Briefly describe the issue you encountered.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: NidoOffice Version
+      placeholder: "v0.13.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - macOS (Apple Silicon arm64)
+        - macOS (Intel x64)
+        - Windows 10 / 11 (x64)
+        - Windows 11 on ARM (arm64)
+        - Linux (x86_64)
+        - Linux (arm64)
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. Open NidoOffice...
+        2. Click on...
+        3. Observe...
+    validations:
+      required: false

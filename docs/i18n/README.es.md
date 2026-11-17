@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  🌐 <a href="../../README.md">English</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.zh-TW.md">繁體中文</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <b>Español</b> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ru.md">Русский</a>
+  🌐 <a href="../../README.md">English</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.zh-TW.md">繁體中文</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <strong>Español</strong> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ru.md">Русский</a>
 </p>
 
 **NidoOffice** es una suite ofimática de escritorio de alto rendimiento y procesamiento local (**Local-First**) para **macOS, Windows 10/11 y Linux**, compatible de forma nativa con **Word (`.docx`), Excel (`.xlsx`), PowerPoint (`.pptx`), PDF (con OCR en el dispositivo), Markdown (`.md`) y HTML**.

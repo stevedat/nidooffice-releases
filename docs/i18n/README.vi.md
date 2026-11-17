@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  🌐 <a href="../../README.md">English</a> · <b>Tiếng Việt</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.zh-TW.md">繁體中文</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <a href="README.es.md">Español</a> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ru.md">Русский</a>
+  🌐 <a href="../../README.md">English</a> · <strong>Tiếng Việt</strong> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.zh-TW.md">繁體中文</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <a href="README.es.md">Español</a> · <a href="README.fr.md">Français</a> · <a href="README.de.md">Deutsch</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ru.md">Русский</a>
 </p>
 
 **NidoOffice** là bộ ứng dụng văn phòng máy tính tốc độ cao, ưu tiên xử lý cục bộ (**Local-First**) dành cho **macOS, Windows 10/11 và Linux**. Hỗ trợ tạo mới, xem, biên tập và tự động hóa bằng AI trên đầy đủ 6 định dạng: **Word (`.docx`), Excel (`.xlsx`), PowerPoint (`.pptx`), PDF (kèm OCR tiếng Việt trên thiết bị), Markdown (`.md`) và HTML**.
@@ -71,7 +71,7 @@ NidoOffice tích hợp sẵn **22 ngôn ngữ giao diện**:
 - **Trình chiếu Chuyên nghiệp (`.pptx` / `.odp`):** Thiết kế Slide Master, hình khối vector, ghi chú diễn giả, chế độ thuyết trình và trích dẫn AI `[Slide N]` nhấp nhảy trang tức thì.
 - **PDF Studio, Ký Số USB Token Ngoại Tuyến (`PKCS#11`), OCR Tiếng Việt & Thuế XML (`eTax`):** Ký số PDF ngoại tuyến bằng USB Token phần cứng (`PKCS#11`), macOS Keychain, Windows Certificate Store hoặc tệp `.p12`/`.pfx` chuẩn Nghị định 30/eIDAS; chỉnh sửa PDF trực tiếp, rà soát hậu kỳ OCR và đọc tờ khai/hóa đơn `.xml`.
 - **Truyền tệp Nội bộ `NidoDrop` (Auto-Stop TTL) & Bộ gõ `Sen Việt` (`VieLotusIM`):** Chia sẻ file giữa máy tính và điện thoại qua mã QR Wi-Fi nội bộ với cơ chế tự ngắt sau 15 phút / 30 phút / 1 giờ / 4 giờ; tích hợp sẵn bộ gõ tiếng Việt tốc độ cao.
-- **29 Công cụ MCP Server & Đa Nhà Cung Cấp AI:** Kết nối trực tiếp với Nido AI, các CLI cục bộ (Claude Code, Codex, Antigravity, Kiro), Local LLM (Ollama, LM Studio, vLLM) hoặc khóa API riêng (BYOK).
+- **Công cụ `nidooffice` CLI, 29 Công cụ MCP Server & Kết nối 1-chạm Tài khoản ChatGPT:** Đăng nhập trực tiếp tài khoản ChatGPT có sẵn (`Free`, `Go`, `Plus`, `Pro`) qua trình duyệt OAuth không cần API Key, hoặc kết nối với Nido AI, các CLI cục bộ (Claude Code, Codex, Antigravity, Cursor, Kiro), Local LLM (Ollama, LM Studio, vLLM) và khóa API riêng (BYOK).
 
 ---
 

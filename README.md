@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  🌐 <b>English</b> · <a href="docs/i18n/README.vi.md">Tiếng Việt</a> · <a href="docs/i18n/README.zh-CN.md">简体中文</a> · <a href="docs/i18n/README.zh-TW.md">繁體中文</a> · <a href="docs/i18n/README.ja.md">日本語</a> · <a href="docs/i18n/README.ko.md">한국어</a> · <a href="docs/i18n/README.es.md">Español</a> · <a href="docs/i18n/README.fr.md">Français</a> · <a href="docs/i18n/README.de.md">Deutsch</a> · <a href="docs/i18n/README.pt-BR.md">Português (Brasil)</a> · <a href="docs/i18n/README.ru.md">Русский</a>
+  🌐 <strong>English</strong> · <a href="docs/i18n/README.vi.md">Tiếng Việt</a> · <a href="docs/i18n/README.zh-CN.md">简体中文</a> · <a href="docs/i18n/README.zh-TW.md">繁體中文</a> · <a href="docs/i18n/README.ja.md">日本語</a> · <a href="docs/i18n/README.ko.md">한국어</a> · <a href="docs/i18n/README.es.md">Español</a> · <a href="docs/i18n/README.fr.md">Français</a> · <a href="docs/i18n/README.de.md">Deutsch</a> · <a href="docs/i18n/README.pt-BR.md">Português (Brasil)</a> · <a href="docs/i18n/README.ru.md">Русский</a>
 </p>
 
 **NidoOffice** is a high-performance, **Local-First** desktop office suite for **macOS, Windows 10/11, and Linux**. Create, view, edit, and automate with AI across all 6 native formats: **Word (`.docx`), Excel (`.xlsx`), PowerPoint (`.pptx`), PDF (with on-device OCR), Markdown (`.md`), and HTML**.
@@ -72,7 +72,7 @@ NidoOffice supports **22 interface languages** out of the box:
 - **Presentations (`.pptx` / `.odp`):** Slide Master editor, vector shapes, speaker notes, presenter view, and clickable `[Slide N]` AI citations.
 - **PDF Studio, Offline Digital Signatures (PKCS#11 USB Token), OCR & XML eTax Reader:** Sign PDFs offline with hardware USB Tokens (PKCS#11), macOS Keychain, Windows Certificate Store, or `.p12`/`.pfx` certificates; edit PDF text in place via PDFium, verify scanned OCR text, and inspect electronic tax/invoice `.xml` files.
 - **`NidoDrop` Local Wi-Fi File Transfer (Auto-Stop TTL) & `VieLotusIM` Input Method:** Share files between PC and phone over local Wi-Fi QR code with automatic session shutoff (15m / 30m / 1h / 4h); built-in Vietnamese input method.
-- **29 MCP Server Tools & Multi-Provider AI:** Connect with Nido AI, local coding CLIs (Claude Code, Codex, Antigravity, Kiro), Local LLMs (Ollama, LM Studio, vLLM), or Bring Your Own Key (BYOK).
+- **`nidooffice` CLI, 29 MCP Server Tools & 1-Click ChatGPT Sign-In:** Sign in directly with your existing ChatGPT account (`Free`, `Go`, `Plus`, or `Pro`) via browser OAuth with zero API key setup, or connect with Nido AI, local coding CLIs (Claude Code, Codex, Antigravity, Cursor, Kiro), Local LLMs (Ollama, LM Studio, vLLM), and personal API keys (BYOK).
 
 ---
 
