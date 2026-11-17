@@ -7,6 +7,7 @@
 <p align="center"><b>The Local-First AI Office Suite for macOS, Windows 10/11 & Linux</b></p>
 
 <p align="center">
+  <a href="https://office.nido-holdings.com"><img src="https://img.shields.io/badge/Website-office.nido--holdings.com-10b981?logo=googlechrome&logoColor=white" alt="Official Website" /></a>
   <a href="https://github.com/stevedat/nidooffice-releases/releases/latest"><img src="https://img.shields.io/github/v/release/stevedat/nidooffice-releases?label=Release&color=10b981" alt="Latest Release" /></a>
   <a href="https://apps.microsoft.com/detail/9PDPX3W5J6D3"><img src="https://img.shields.io/badge/Microsoft_Store-9PDPX3W5J6D3-0078D4?logo=microsoft" alt="Microsoft Store" /></a>
   <a href="https://github.com/stevedat/homebrew-tap"><img src="https://img.shields.io/badge/Homebrew-stevedat%2Ftap%2Fnidooffice-FBB040?logo=homebrew" alt="Homebrew Cask" /></a>
@@ -97,6 +98,7 @@ Every release includes [`SHA256SUMS.txt`](https://github.com/stevedat/nidooffice
 shasum -a 256 -c SHA256SUMS.txt --ignore-missing
 ```
 
+- 🌍 **Official Website & Guides:** [https://office.nido-holdings.com](https://office.nido-holdings.com) ([DOCX](https://office.nido-holdings.com/docx) · [XLSX](https://office.nido-holdings.com/xlsx) · [PPTX](https://office.nido-holdings.com/pptx) · [PDF & PKCS#11](https://office.nido-holdings.com/pdf) · [CLI & 29 MCP](https://office.nido-holdings.com/ai-mcp))
 - 📦 **All Releases:** [GitHub Releases](https://github.com/stevedat/nidooffice-releases/releases)
 - 🌐 **Companion Platform:** [https://educenter.app](https://educenter.app)
 - 🐛 **Bug Reports & Support:** [GitHub Issues](https://github.com/stevedat/nidooffice-releases/issues)
