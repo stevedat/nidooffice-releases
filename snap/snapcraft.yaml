@@ -1,7 +1,7 @@
 name: nidooffice
 title: NidoOffice
 base: core22
-version: '0.12.7'
+version: '0.13.0'
 summary: Local-first AI Office Suite for Word, Excel, PowerPoint, PDF & Markdown
 description: |
   NidoOffice is a unified, local-first AI office suite built on Apache-2.0
@@ -52,7 +52,7 @@ apps:
       - audio-record
       - browser-support
   cli:
-    command: opt/NidoOffice/resources/cli/genoffice
+    command: opt/NidoOffice/resources/cli/nidooffice
     plugs:
       - home
       - removable-media
@@ -107,7 +107,7 @@ parts:
       craftctl default
       ARCH="${CRAFT_ARCH_BUILD_FOR:-$(dpkg --print-architecture)}"
       REPO="stevedat/nidooffice-releases"
-      VER="0.12.7"
+      VER="0.13.0"
       if [ "$ARCH" = "arm64" ] && [ -d "apps/shell/release/linux-arm64-unpacked" ]; then
         exit 0
       elif [ "$ARCH" != "arm64" ] && [ -d "apps/shell/release/linux-unpacked" ]; then
@@ -116,11 +116,11 @@ parts:
       if [ "$ARCH" = "arm64" ]; then
         ASSET_URL="https://github.com/${REPO}/releases/download/v${VER}/NidoOffice-${VER}-arm64.AppImage"
         FALLBACK_URL="https://github.com/${REPO}/releases/latest/download/NidoOffice-linux-arm64.AppImage"
-        FALLBACK_V2="https://github.com/${REPO}/releases/download/v0.12.6/NidoOffice-0.12.6-arm64.AppImage"
+        FALLBACK_V2="https://github.com/${REPO}/releases/download/v0.12.7/NidoOffice-0.12.7-arm64.AppImage"
       else
         ASSET_URL="https://github.com/${REPO}/releases/download/v${VER}/NidoOffice-${VER}.AppImage"
         FALLBACK_URL="https://github.com/${REPO}/releases/latest/download/NidoOffice-linux-x64.AppImage"
-        FALLBACK_V2="https://github.com/${REPO}/releases/download/v0.12.6/NidoOffice-0.12.6.AppImage"
+        FALLBACK_V2="https://github.com/${REPO}/releases/download/v0.12.7/NidoOffice-0.12.7.AppImage"
       fi
       curl -fL --retry 3 -o nidooffice.AppImage "$ASSET_URL" \
         || curl -fL --retry 3 -o nidooffice.AppImage "$FALLBACK_URL" \
@@ -148,7 +148,7 @@ parts:
       #!/bin/sh
       export ELECTRON_DISABLE_SANDBOX=1
       export TMPDIR="${XDG_RUNTIME_DIR:-/tmp}"
-      exec "$SNAP/opt/NidoOffice/genoffice" --no-sandbox "$@"
+      exec "$SNAP/opt/NidoOffice/nidooffice" --no-sandbox "$@"
       EOF
       cat > "$CRAFT_PART_INSTALL/usr/share/applications/nidooffice.desktop" <<'EOF'
       [Desktop Entry]
@@ -161,10 +161,10 @@ parts:
       Type=Application
       Categories=Office;WordProcessor;Spreadsheet;Presentation;Viewer;
       MimeType=application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-excel.sheet.macroEnabled.12;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/vnd.ms-excel;text/csv;text/tab-separated-values;application/pdf;text/markdown;text/html;
-      StartupWMClass=genoffice
+      StartupWMClass=nidooffice
       EOF
       chmod -R a+rX "$CRAFT_PART_INSTALL"
       chmod 0755 "$CRAFT_PART_INSTALL/bin/nidooffice-launch"
-      chmod 0755 "$CRAFT_PART_INSTALL/opt/NidoOffice/genoffice" || true
-      chmod 0755 "$CRAFT_PART_INSTALL/opt/NidoOffice/resources/cli/genoffice" || true
+      chmod 0755 "$CRAFT_PART_INSTALL/opt/NidoOffice/nidooffice" || true
+      chmod 0755 "$CRAFT_PART_INSTALL/opt/NidoOffice/resources/cli/nidooffice" || true
       chmod 0755 "$CRAFT_PART_INSTALL/opt/NidoOffice/resources/native/xlsx-sidecar" || true
