@@ -112,6 +112,26 @@
       "imageURL": null,
       "accentHex": "#6366F1",
       "source": "house"
+    },
+    {
+      "id": "eduflows-school-os",
+      "active": true,
+      "weight": 40,
+      "trigger": "any",
+      "badgeVi": "QUẢN LÝ MẦM NON · EDUFLOWS",
+      "badgeEn": "SCHOOL OS · EDUFLOWS",
+      "titleVi": "EduFlows — Nền tảng Quản lý Mầm non, Học phí VietQR & Dinh dưỡng Chuẩn Sở",
+      "titleEn": "EduFlows — Preschool Operations, VietQR Billing & Nutrition Compliance Platform",
+      "subtitleVi": "Điểm danh, thu học phí tự động, khẩu phần bếp & xuất sổ sách Excel/Word mở mượt ngay trên NidoOffice",
+      "subtitleEn": "Attendance, VietQR invoicing, kitchen nutrition & Office exports built to pair seamlessly with NidoOffice",
+      "ctaVi": "Dùng thử cho Trường",
+      "ctaEn": "Try for Schools",
+      "urlVi": "https://eduflows.app/?ref=nidooffice",
+      "urlEn": "https://eduflows.app/?ref=nidooffice",
+      "iconSymbol": "building.2.crop.circle.fill",
+      "imageURL": null,
+      "accentHex": "#10B981",
+      "source": "house"
     }
   ]
 }
