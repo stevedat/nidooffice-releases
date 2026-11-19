@@ -1,7 +1,7 @@
 name: nidooffice
 title: NidoOffice
 base: core22
-version: '0.13.0'
+version: '0.13.1'
 summary: Local-first AI Office Suite for Word, Excel, PowerPoint, PDF & Markdown
 description: |
   NidoOffice is a unified, local-first AI office suite built on Apache-2.0
@@ -107,7 +107,7 @@ parts:
       craftctl default
       ARCH="${CRAFT_ARCH_BUILD_FOR:-$(dpkg --print-architecture)}"
       REPO="stevedat/nidooffice-releases"
-      VER="0.13.0"
+      VER="0.13.1"
       if [ "$ARCH" = "arm64" ] && [ -d "apps/shell/release/linux-arm64-unpacked" ]; then
         exit 0
       elif [ "$ARCH" != "arm64" ] && [ -d "apps/shell/release/linux-unpacked" ]; then
@@ -148,6 +148,9 @@ parts:
       #!/bin/sh
       export ELECTRON_DISABLE_SANDBOX=1
       export TMPDIR="${XDG_RUNTIME_DIR:-/tmp}"
+      if [ -n "${WAYLAND_DISPLAY:-}" ] || [ "${XDG_SESSION_TYPE:-}" = "wayland" ]; then
+        exec "$SNAP/opt/NidoOffice/nidooffice" --no-sandbox --ozone-platform-hint=auto --enable-wayland-ime "$@"
+      fi
       exec "$SNAP/opt/NidoOffice/nidooffice" --no-sandbox "$@"
       EOF
       cat > "$CRAFT_PART_INSTALL/usr/share/applications/nidooffice.desktop" <<'EOF'
